@@ -1,0 +1,15 @@
+#Possible Parameters
+
+ID 
+Company name
+Product
+date of input
+price
+country of origin/region 
+sector 
+other information 
+source space 
+contact information 
+file (Madness for data size)
+reliability
+scoring method

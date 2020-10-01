@@ -1,0 +1,14 @@
+#Possible dataformats to work on 
+
+
+Excel
+csv
+txt/doc/docx/odt/
+pdf (PDF Miner)
+online source(source code in HTML/...)
+jpeg/TIFF (Photo formats)
+xml
+hd5
+json
+
+
