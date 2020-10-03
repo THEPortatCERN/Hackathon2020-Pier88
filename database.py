@@ -12,7 +12,7 @@ def create(inp0, inp1, inp2, inp3, inp4, inp5, inp6, inp7, inp8, inp9, inp10):
 
 def show(inp):
     cur=conn.cursor()
-    cur = conn.execute("SELECT ID, COMPANY, CATEGORY, PRODUCTID, PRICE PER UNIT, CURRENCY, ORIGIN, REGION, SCORE, RELIABILITY, CONTACT")
+    cur = conn.execute("SELECT ID, COMPANY, CATEGORY, PRODUCTID, PRICEPERUNIT, CURRENCY, ORIGIN, REGION, SCORE, RELIABILITY, CONTACT from COMPANY")
     for row in cur:
         print 'ID= ', row[0]                
 	print 'COMPANY= ', row[1]           
@@ -40,35 +40,33 @@ def deleteall():
 
 def compare(pid):
 	cur=conn.cursor()
-	cur2=conn.cursor()
-	cur=conn.execute("SELECT ID from COMPANY")
-	cur2=conn.execute("SELECT ID, COMPANY, CATEGORY, PRODUCTID, PRICEPERUNIT, CURRENCY, ORIGIN, REGION, SCORE, RELIABILITY, CONTACT from COMPANY") 
-	print(cur)
+	cur=conn.execute("SELECT ID, COMPANY, CATEGORY, PRODUCTID, PRICEPERUNIT, CURRENCY, ORIGIN, REGION, SCORE, RELIABILITY, CONTACT from COMPANY")
 	i=0
 	k=0
+	print("checking")
 	for row in cur:
 		print("check")
-		if pid==row[0]:
+		if pid==row[3]:
 			k=1
-			for row in cur2[i]:
-				print 'ID= ', row[0]
-         			print 'COMPANY= ', row[1]
-         			print 'CATEGORY= ', row[2]
-				print 'PRODUCTID= ', row[3]
-                                print 'PRICEPERUNIT= ', row[4]
-                                print 'CURRENCY= ',  row[5]
-                                print 'ORIGIN= ',   row[6]
-                                print 'REGION= ',   row[7]
-                                print 'SCORE= ',    row[8]
-				print 'RELIABILITY= ',    row[9]
-                                print 'CONTACT= ',         row[10] 
+			print 'ID= ', row[0]
+         		print 'COMPANY= ', row[1]
+         		print 'CATEGORY= ', row[2]
+			print 'PRODUCTID= ', row[3]
+                        print 'PRICEPERUNIT= ', row[4]
+                        print 'CURRENCY= ',  row[5]
+                        print 'ORIGIN= ',   row[6]
+                        print 'REGION= ',   row[7]
+                        print 'SCORE= ',    row[8]
+			print 'RELIABILITY= ',    row[9]
+                        print 'CONTACT= ',         row[10] 
 			print(i)
 			print("k=", k)
 			k=0
-			break	
+			break
 		else:
 			print("No entry found")
-		
+	print("checked")
+
 def close():
     conn.close()
 

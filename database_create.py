@@ -2,25 +2,19 @@
 
 import sqlite3
 
-conn = sqlite3.connect('index.db')
+conn = sqlite3.connect('unchained.db')
 print "Opened database successfully";
 
 ##########################################################
 #Creation of a table using these features
 ##########################################################
 
-conn.execute('''CREATE TABLE COMPANY
+conn.execute('''CREATE TABLE UNCHAINED
          (ID              INT PRIMARY KEY,
-         COMPANY          TEXT,
-         CATEGORY         TEXT,
-         PRODUCTID       TEXT,
-         PRICEPERUNIT   REAL,
-	 CURRENCY 	  TEXT,
-	 ORIGIN  	  TEXT,
-	 REGION		  TEXT,
-	 SCORE		  TEXT,
-	 RELIABILITY      TEXT,
-	 CONTACT	  TEXT );''')
+         ORIGIN           TEXT,
+	 GOOD  		  TEXT,
+	 CL               INTEGER,
+	 FL               INTEGER);''')
 print "Database creted successfully";
 conn.close()
 
