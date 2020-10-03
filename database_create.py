@@ -10,18 +10,18 @@ print "Opened database successfully";
 ##########################################################
 
 conn.execute('''CREATE TABLE COMPANY
-         (ID INT PRIMARY KEY,
-         BRAND           TEXT,
-         PRODUCT         TEXT,
-         SEGMENT        TEXT,
-         PRICE          REAL);''')
+         (ID              INT PRIMARY KEY,
+         COMPANY          TEXT,
+         CATEGORY         TEXT,
+         PRODUCTID       TEXT,
+         PRICEPERUNIT   REAL,
+	 CURRENCY 	  TEXT,
+	 ORIGIN  	  TEXT,
+	 REGION		  TEXT,
+	 SCORE		  TEXT,
+	 RELIABILITY      TEXT,
+	 CONTACT	  TEXT );''')
 print "Database creted successfully";
 conn.close()
 
-#conn.execute('''CREATE TABLE COMPANY
-#         (ID INT PRIMARY KEY     NOT NULL,
-#         NAME           TEXT    NOT NULL,
-#         AGE            INT     NOT NULL,
-#         ADDRESS        CHAR(50),
-#         SALARY         REAL);''')
-#print "Table created successfully";
+

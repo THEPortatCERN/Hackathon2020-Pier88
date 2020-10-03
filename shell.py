@@ -9,17 +9,17 @@ print("Every input has to be given in '' , except for the delete ID")
 
 inp="N";
 while inp!="X":
-    inp=input("Create or Delete?  " )
+    inp=input("Create, Delete or Compare?  " )
     while any((inp=='Create', inp=='N')):
-        inp = input("New database entry: ['ID', 'BRAND', 'PRODUCT', 'SEGMENT', 'PRICE'] || X for Exit || Press V for showing all entries ");
+        inp = input("New database entry: ['ID', 'COMPANY', 'CATEGORY', 'PRODUCTID', 'PRICEPERUNIT', 'CURRENCY', 'ORIGIN', 'REGION', 'SCORE', 'RELIABILITY', 'CONTACT'] || X for Exit || Press V for showing all entries ");
         while inp=='V':
             show(inp)
-            inp = input("New database entry: ['ID', 'BRAND', 'PRODUCT', 'SEGMENT', 'PRICE'] || Press V for showing all entries || X for Exit ");
+            inp = input("New database entry: ['ID', 'COMPANY', 'CATEGORY', 'PRODUCTID', 'PRICEPERUNIT', 'CURRENCY', 'ORIGIN', 'REGION', 'SCORE', 'RELIABILITY', 'CONTACT'] || Press V for showing all entries || X for Exit ");
         if inp=="X":
             break
         print(inp)
         #importlib.import_module(moduleName)
-        create(inp[0], inp[1], inp[2], inp[3], inp[4])
+        create(inp[0], inp[1], inp[2], inp[3], inp[4], inp[5], inp[6], inp[7], inp[8], inp[9], inp[10])
         print("Record created successfully")
         inp=input("Another: N || Press V for showing all entries || Delete for deleting an entry || Exit: X ");
         while inp=='V':
@@ -53,6 +53,29 @@ while inp!="X":
         while inp=='V':
             show(inp)
             inp = input("Another: N || Press V for showing all entries || X for Exit ");
+
+
+
+
+    while any((inp=='Compare', inp=='N')):
+    	inp = input("PRODUCTID THAT YOU WANT TO COMPARE:  || X for Exit || V for showing the database")
+    	while inp=='V':
+       		show(inp)
+       		inp = input("PRODUCTID THAT YOU WANT TO COMPARE: || Press V show database || X to Exit") 
+    	if inp=="X":
+       		break
+    	print(inp)
+	inp= int(inp)
+    	compare(inp)
+    	print("Record compared successfully")
+    	inp=input("Another: N || Press V for showing all entries || Delete for deleting an entry || Exit: X")
+    	while inp=='V':
+       		show(inp)
+       	inp = input("Create another entry: N || Press V for showing all entries || Delete for deleting")
+    	if inp=="X":
+       		break
+
+
 
 
 inp=input("Show the Database: V || Exit: X ")
